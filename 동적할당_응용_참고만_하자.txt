@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+void input(char* &name,char* &addr,char* &age) {
+	char name1[100], addr1[100], age1[20];
+
+	cout << "이름을 입력 -> ";
+	cin.getline(name1, 100);
+	name = new char[strlen(name1) + 1];
+	strcpy(name, name1);
+	cout << "주소를 입력 -> ";
+	cin.getline(addr1, 100);
+	name = new char[strlen(addr1) + 1];
+	strcpy(addr, addr1);
+	cout << "나이를 입력 -> ";
+	cin.getline(age1, 20);
+	age = new char[strlen(age1) + 1];
+	strcpy(age, age1);
+}
+
+void main() {
+	char *name, *addr, *age;
+	input(name, addr, age);
+	cout << "당신의 이름은 : " << name << endl;
+	cout << name << " 의 주소는 : " << addr << endl;
+	cout << name << " 의 나이는 : " << age << endl;
+	delete[]name;
+	delete[]addr;
+	delete[]age;
+}

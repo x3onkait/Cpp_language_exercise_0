@@ -1,0 +1,51 @@
+//입력받은 두 수 중 더 큰 수를 반환하는 함수
+int findBiggerInteger(int first, int second) {
+	if (first < second) {
+		return second;
+	}
+	if (first > second) {
+		return first;
+	}
+}
+
+//입력받은 두 문자열(단, 공백이 없음)을 서로 붙여 반환하는 함수
+string addTwoString(string first, string second) {
+	string a = first + second;
+	return a;
+}
+
+//3의 배수를 판별하는 함수
+void find3xNumber(int number) {
+	if (number % 3 == 0)
+		cout << "입력하신 숫자 " << number << " 는 3의 배수가 맞습니다." << endl;
+	if (number % 3 != 0)
+		cout << "입력하신 숫자 " << number << " 는 3의 배수가 아닙니다." << endl;
+
+	cout << "입력한 숫자의 3n...을 출력합니다" << endl;
+
+	for (int i = 0; i < number; i++) {
+		if (i == 0)
+			continue;
+		if (i % 3 == 0)
+			cout << i << " ";
+		if (i % 30 == 0)
+			cout << endl;	//보기좋게 줄바꿈
+	}
+	cout << endl;
+}
+
+//수를 입력받아 거꾸로 된 수를 반환하는 함수
+int reverseInteger(int n) {
+	int i, temp, result = 0;
+
+	while (1) {
+		temp = n % 10;
+		result = (result + temp) * 10;
+		n /= 10;
+		if (n == 0) {
+			result /= 10;
+			break;
+		}
+	}
+	return result;
+}
